@@ -17,11 +17,11 @@ def clock_angle(time)
     hour_degree = hour * 30
     minute_degree = minutes * 6
 
-    # determining the hour hand's progress within the hour
-    x = minutes * 30
-    hour_plus_minutes = x/60.0
+    # determining the hour hand's progress within the hour - for every minute in the hour, the hour hand moves 0.5 degrees (30 degrees divided by 60 minutes)
+    hour_plus_minutes = minutes * 0.5
 
     difference = ((hour_degree + hour_plus_minutes) - minute_degree).abs
+    
     if difference > 180
         360 - difference
     else 
